@@ -63,7 +63,7 @@
 
 							<p>
                                 <ion:lang key="form_label_firstname"/> : <ion:data:firstname /><br/>
-                                <ion:lang key="form_label_lastname"/> : <ion:data:lastname /><br/>
+                                <ion:lang key="form_label_login"/> : <ion:data:lastname /><br/>
                                 <ion:lang key="form_label_email"/> : <ion:data:email /><br/>
                                 IP : <ion:data:ip /><br/>
 							</p>

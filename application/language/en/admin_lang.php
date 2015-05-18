@@ -15,14 +15,14 @@ $lang['ionize_home'] = 'Home';
 $lang['ionize_login'] = 'Login';
 $lang['ionize_logout'] = 'Logout';
 $lang['ionize_goback'] = 'Back to website';
-$lang['ionize_website'] = 'See the website';
-$lang['ionize_logged_as'] = 'Logged as';
+$lang['ionize_website'] = 'View Live Website';
+$lang['ionize_logged_as'] = 'Logged in as';
 $lang['ionize_login_name'] = 'Login';
 $lang['ionize_login_password'] = 'Password';
 $lang['ionize_login_remember'] = 'Remember me';
 $lang['ionize_forgot_password'] = 'Forgotten password ?';
 $lang['ionize_session_expired'] = 'Your session has expired. Please log in again.';
-$lang['ionize_login_error'] = 'Something wrong happens...';
+$lang['ionize_login_error'] = 'Something went wrong...';
 
 
 /*
@@ -30,7 +30,7 @@ $lang['ionize_login_error'] = 'Something wrong happens...';
 | Dashboard
 |--------------------------------------------------------------------------
 */
-$lang['ionize_dashboard_icon_add_page'] = 'New page';
+$lang['ionize_dashboard_icon_add_page'] = 'New Page';
 $lang['ionize_dashboard_icon_mediamanager'] = 'Medias';
 $lang['ionize_dashboard_icon_translation'] = 'Translations';
 $lang['ionize_dashboard_icon_google_analytics'] = 'Analytics';
@@ -39,12 +39,12 @@ $lang['ionize_dashboard_icon_users'] = 'Users & Roles';
 $lang['ionize_dashboard_title_content'] = 'Content';
 $lang['ionize_dashboard_title_tools'] = 'Tools';
 $lang['ionize_dashboard_title_settings'] = 'Settings';
-$lang['ionize_dashboard_title_last_modified_articles'] = 'Last updated articles';
-$lang['ionize_dashboard_title_last_connected_users'] = 'Last connected';
-$lang['ionize_dashboard_title_current_connected_users'] = 'Backend connected users';
+$lang['ionize_dashboard_title_last_modified_articles'] = 'Last Updated Articles';
+$lang['ionize_dashboard_title_last_connected_users'] = 'Last Connected';
+$lang['ionize_dashboard_title_current_connected_users'] = 'Backend Connected Users';
 $lang['ionize_dashboard_title_last_registered_users'] = 'Last registered';
-$lang['ionize_dashboard_title_orphan_pages'] = 'Orphan pages';
-$lang['ionize_dashboard_title_orphan_articles'] = 'Orphan articles';
+$lang['ionize_dashboard_title_orphan_pages'] = 'Orphan Pages';
+$lang['ionize_dashboard_title_orphan_articles'] = 'Orphan Articles';
 $lang['ionize_dashboard_title_users'] = 'Users';
 $lang['ionize_dashboard_title_content'] = 'Content';
 $lang['ionize_dashboard_title_visits'] = 'Visits';
@@ -56,9 +56,9 @@ $lang['ionize_dashboard_title_quick_settings'] = 'Quick Settings';
 | Structure
 |--------------------------------------------------------------------------
 */
-$lang['ionize_structure_main_menu'] = 'Main menu';
-$lang['ionize_structure_system_menu'] = 'System content';
-$lang['ionize_button_toggle_header'] = 'Toggle header';
+$lang['ionize_structure_main_menu'] = 'Main Menu';
+$lang['ionize_structure_system_menu'] = 'System Content';
+$lang['ionize_button_toggle_header'] = 'Toggle Header';
 
 
 /*
@@ -105,7 +105,7 @@ $lang['ionize_menu_static_items'] = 'Static Items';
 | Global titles
 |--------------------------------------------------------------------------
 */
-$lang['ionize_title_welcome'] = 'Welcome to Ionize';
+$lang['ionize_title_welcome'] = 'Welcome to iPharma';
 $lang['ionize_title_structure'] = 'Structure';
 $lang['ionize_title_options'] = 'Options';
 $lang['ionize_title_setup'] = 'Setup';
@@ -250,6 +250,7 @@ $lang['ionize_label_edit'] = 'Edit';
 $lang['ionize_label_delete'] = 'Delete';
 $lang['ionize_label_unlink'] = 'Unlink';
 $lang['ionize_label_create'] = 'Create';
+$lang['ionize_label_staffid'] = 'Staff ID';
 $lang['ionize_label_new'] = 'New';
 $lang['ionize_label_status'] = 'Status';
 $lang['ionize_label_select_files_to_upload'] = 'Select files to Upload';
@@ -303,7 +304,7 @@ $lang['ionize_label_videos'] = 'Videos';
 $lang['ionize_label_files'] = 'Files';
 $lang['ionize_label_default'] = 'Default';
 $lang['ionize_label_code'] = 'Code';
-$lang['ionize_label_toggle_editor'] = 'toggle editor';
+$lang['ionize_label_toggle_editor'] = 'Toggle Editor';
 $lang['ionize_label_in_menu'] = 'Appears in menu';
 $lang['ionize_label_has_url'] = 'Has URL';
 $lang['ionize_label_parent'] = 'Parent';
@@ -488,7 +489,7 @@ $lang['ionize_title_user_meta'] = 'Users meta data';
 $lang['ionize_title_filter_userslist'] = 'Userlist filter';
 $lang['ionize_label_username'] = 'Login';
 $lang['ionize_label_screen_name'] = 'Complete name';
-$lang['ionize_label_firstname'] = 'First name';
+$lang['ionize_label_firstname'] = 'Firstname';
 $lang['ionize_label_lastname'] = 'Last name';
 $lang['ionize_select_gender'] = '-- Gender --';
 $lang['ionize_label_gender'] = 'Gender';
@@ -1278,7 +1279,7 @@ $lang['ionize_title_role_edit'] = 'Role Edit';
 $lang['ionize_title_add_role'] = 'Add New Role';
 $lang['ionize_title_add_user'] = 'Add New User';
 $lang['ionize_title_resource_protected'] = 'Resource protected';
-$lang['ionize_subtitle_resource_protected'] = "You don't have access to this resource.<br/>If you need to have access, please ask one upper level Administrator.";
+$lang['ionize_subtitle_resource_protected'] = "You don't have access to this resource.<br/>If you want to have access, please ask Administrator.";
 $lang['ionize_label_access_denied'] = 'Access denied';
 $lang['ionize_help_role_choice'] = 'Existing levels:';
 $lang['ionize_message_role_saved'] = 'Role saved';
@@ -1306,7 +1307,7 @@ $lang['ionize_label_can_see_backend'] = 'Can see (backend)';
 
 $lang['ionize_label_denied_action_401'] = 'Must login (401)';
 $lang['ionize_label_denied_action_403'] = 'Forbidden (403)';
-$lang['ionize_label_denied_action_404'] = 'Not found (404)';
+$lang['ionize_label_denied_action_404'] = 'Page Not found (404)';
 $lang['ionize_help_denied_action_401'] = 'Page in menu. Output : 401, login needed';
 $lang['ionize_help_denied_action_403'] = 'Page in menu. Output : 403, Forbidden content';
 $lang['ionize_help_denied_action_404'] = 'Page not in menu. Output : 404, Page not found';
@@ -1325,12 +1326,12 @@ $lang['ionize_title_tags'] = "Tags";
 $lang['ionize_label_new_tag'] = "Add one Tag";
 $lang['ionize_button_save_tags'] = "Save Tags";
 $lang['ionize_button_add_tag'] = "Add Tag";
-$lang['ionize_help_tag_textbox'] = "type a new tag here";
+$lang['ionize_help_tag_textbox'] = "Type a new tag here";
 $lang['ionize_help_tag_new'] = "Type a new tag in the last input.<br/>Validate by return.";
 
 
-$lang['ionize_help_orphan_pages'] = "These pages are not linked to any parent.<br/>This happens when the parent page of one page is deleted.";
-$lang['ionize_help_orphan_articles'] = "These articles are not linked to any page.<br/>To link again one article to one page, drag'n'drop it to one page in the tree.";
+$lang['ionize_help_orphan_pages'] = "These pages are not linked to any parent menu.<br/>This happens when the parent page of one page is deleted.";
+$lang['ionize_help_orphan_articles'] = "These articles are not linked to any page.<br/>To link again one article to one page, drag'n'drop it to one page in the menu tree.";
 
 
 $lang['ionize_ga_pageviews'] = 'Page views';

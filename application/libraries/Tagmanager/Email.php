@@ -110,8 +110,12 @@ class TagManager_Email extends TagManager
 
 				// Email Lib
 				if ( ! isset(self::$ci->email)) self::$ci->load->library('email');
-				self::$ci->email->clear();
-
+				//self::$ci->email->clear();
+				
+				// CHANGED - define smtp valid new line and line feed chars
+				self::$ci->email->set_crlf("\r\n");
+				self::$ci->email->set_newline("\r\n");
+				
 				// Subject / From / To
 				self::$ci->email->subject($subject);
 				self::$ci->email->from($website_email, Settings::get("site_title"));
@@ -130,7 +134,10 @@ class TagManager_Email extends TagManager
 
 				if ( ! $result)
 				{
-					log_message('error', 'Error : Tagmanager/Email->send_form_emails() : Email was not sent.');
+					/// DEBUG
+  log_message('error','Mail failed to send to '.$email.' from '.$website_email.' at site '.$_SERVER['SERVER_NAME']);
+  trace(self::$ci->email->print_debugger());
+  /// die(); /// use die if redirects otherwise, or maybe use fwrite (google it) to save debug to txt file if ajax
 				}
 			}
 			else

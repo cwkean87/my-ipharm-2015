@@ -9,8 +9,6 @@
  * @since		Version 0.9.9
  *
  */
-
-
 /**
  * User TagManager
  *
@@ -22,8 +20,6 @@ class TagManager_User extends TagManager
 	 * @var bool
 	 */
 	protected static $processed = FALSE;
-
-
 	/**
 	 * Stores the current user
 	 *
@@ -31,8 +27,6 @@ class TagManager_User extends TagManager
 	 *
 	 */
 	protected static $user = NULL;
-
-
 	/**
 	 * Stores the current user's group
 	 *
@@ -40,8 +34,6 @@ class TagManager_User extends TagManager
 	 *
 	 */
 	protected static $group = NULL;
-
-
 	/**
 	 * Only few tags are described here
 	 * Common tags are set dynamically, from DB fields.
@@ -57,15 +49,10 @@ class TagManager_User extends TagManager
 		'user:group' => 			'tag_user_group',
 		'user:group:name' => 		'tag_user_group_name',
 		'user:group:title' => 		'tag_user_group_title',
-
 		// Expands the tag if the user is logged in
 		'user:logged' =>		'tag_user_logged',
 	);
-
-
 	// ------------------------------------------------------------------------
-
-
 	/**
 	 * Parent <ion:user /> tag
 	 *
@@ -78,17 +65,14 @@ class TagManager_User extends TagManager
 	{
 		self::load_model('user_model');
 		self::load_model('role_model');
-
 		// Do these once
 		if (self::$processed === FALSE)
 		{
 			// To avoid looping if process data calls "<ion:user />" again
 			self::$processed = TRUE;
-
 			// Set dynamics tags
 			$user_fields = self::$ci->user_model->field_data();
 			$role_fields = self::$ci->role_model->field_data();
-
 			foreach($user_fields as $field => $info)
 			{
 				if (in_array($info['type'], array('date', 'datetime', 'timestamp')))
@@ -101,24 +85,17 @@ class TagManager_User extends TagManager
 			{
 				self::$context->define_tag('user:group:' . $field, array(__CLASS__, 'tag_simple_value'));
 			}
-
 			// Set the current user
 			self::$user = User()->get_user();
 		}
-
 		// Do this every time the tag is called
 		if (self::$user) {
 			$tag->set('user', self::$user);
 			$tag->set('group', User()->get_role());
 		}
-
 		return $tag->expand();
 	}
-
-
 	// ------------------------------------------------------------------------
-
-
 	/**
 	 * Expands the children if the user is logged in.
 	 *
@@ -129,11 +106,8 @@ class TagManager_User extends TagManager
 	public static function tag_user_logged(FTL_Binding $tag)
 	{
 		$tag->setAsProcessTag();
-
 		$is = $tag->getAttribute('is');
-
 		if (is_null($is)) $is = TRUE;
-
 		if (User()->logged_in() == $is)
 		{
 			if (self::$trigger_else > 0)
@@ -146,11 +120,7 @@ class TagManager_User extends TagManager
 			return '';
 		}
 	}
-
-
 	// ------------------------------------------------------------------------
-
-
 	/**
 	 * Returns the found name of the user
 	 * 1. Screen name if set
@@ -170,11 +140,7 @@ class TagManager_User extends TagManager
 		}
 		return self::output_value($tag, $value);
 	}
-
-
 	// ------------------------------------------------------------------------
-
-
 	/**
 	 * Current user's group
 	 *
@@ -187,14 +153,9 @@ class TagManager_User extends TagManager
 	{
 		if (isset(self::$user['group']))
 			$tag->set('group', self::$user['group']);
-
 		return $tag->expand();
 	}
-
-
 	// ------------------------------------------------------------------------
-
-
 	/**
 	 * More logical key for 'slug' in group table.
 	 * @TODO : Correct 'slug' in DB and replace it by 'name'
@@ -207,14 +168,9 @@ class TagManager_User extends TagManager
 	public static function tag_user_group_name(FTL_Binding $tag)
 	{
 		$name = $tag->getValue('slug', 'group');
-
 		return self::output_value($tag, $name);
 	}
-
-
 	// ------------------------------------------------------------------------
-
-
 	/**
 	 * More logical key for 'group_name' in group table.
 	 * @TODO : Correct 'group_name' in DB and replace it by 'title'
@@ -227,14 +183,9 @@ class TagManager_User extends TagManager
 	public static function tag_user_group_title(FTL_Binding $tag)
 	{
 		$group_name = $tag->getValue('group_name', 'group');
-
 		return self::output_value($tag, $group_name);
 	}
-
-
 	// ------------------------------------------------------------------------
-
-
 	/**
 	 * Processes the form POST data.
 	 * This method is declared as form "process" method in /application/config/forms.php for each form.
@@ -250,33 +201,50 @@ class TagManager_User extends TagManager
 	public static function process_data(FTL_Binding $tag)
 	{
 		$form_name = self::$ci->input->post('form');
-
 		if ($form_name)
 		{
 			switch ($form_name)
 			{
 				// Logout
 				case 'logout':
-
 					if (User()->logged_in())
 					{
 						// Potentially redirect to the page setup in /application/config/forms.php
 						$redirect = TagManager_Form::get_form_redirect();
-
 						User()->logout($redirect);
 					}
 					break;
-
 				// Login
 				case 'login':
-
 					if (TagManager_Form::validate('login'))
 					{
 						if ( ! User()->logged_in())
 						{
 							$email = self::$ci->input->post('email');
-							$db_user = self::$ci->user_model->find_user(array('email'=>$email));
+							$username   = self::$ci->input->post('username');
+						
+						// Try Email Login
+                            if( ! empty($email) )
+                            {
+                                $db_user = self::$ci->user_model->find_user(array('email'=>$email));
 
+                                $user = array(
+                                    'email' => $email,
+                                    'password' => self::$ci->input->post('password')
+                                );
+                            }
+
+                            // If email empty try username login
+                            if( empty($email) && ! empty($username) )
+                            {
+                                $db_user = self::$ci->user_model->find_user(array('username'=>$username));
+
+                                $user = array(
+                                    'username' => $username,
+                                    'password' => self::$ci->input->post('password')
+                                );
+                            }
+						
 							if ($db_user)
 							{
 								// Account not allowed to login
@@ -287,19 +255,12 @@ class TagManager_User extends TagManager
 								}
 								else
 								{
-									$user = array(
-										'email' => $email,
-										'password' => self::$ci->input->post('password')
-									);
-
 									$result = User()->login($user);
-
 									if ($result)
 									{
 										// Potentially redirect to the page setup in /application/config/forms.php
-										$redirect = TagManager_Form::get_form_redirect();
-											if ($redirect !== FALSE) redirect($redirect);
-
+										//$redirect = TagManager_Form::get_form_redirect();
+											//if ($redirect !== FALSE) redirect($redirect);
 										// If redirect is commented, this success message will be available.
 										$message = TagManager_Form::get_form_message('success');
 										TagManager_Form::set_additional_success('login', $message);
@@ -319,27 +280,21 @@ class TagManager_User extends TagManager
 						}
 					}
 					break;
-
 				// Register
 				case 'register':
-
 					if (TagManager_Form::validate('register'))
 					{
 						// Get user's allowed fields
 						$fields = TagManager_Form::get_form_fields('register');
 						if ( is_null($fields))
 							show_error('No definition for the form "register"');
-
 						$fields = array_fill_keys($fields, FALSE);
 						$user = array_merge($fields, self::$ci->input->post());
-
 						// Compliant with User, based on username
-						$user['username'] = $user['email'];
+						$user['username'] = $user['lastname'];
 						$user['join_date'] = date('Y-m-d H:i:s');
-
 						// Fire returns an array
 						$results = Event::fire('User.register.check.before', $user);
-
 						// Empty $result : No method registered to 'User.register.check.before' => No test
 						// Result == TRUE : The user can register
 						if (self::isResultTrue($results))
@@ -349,31 +304,24 @@ class TagManager_User extends TagManager
 								$message = User()->error();
 								if ( empty($message))
 									$message = TagManager_Form::get_form_message('error');
-
 								TagManager_Form::set_additional_error('register', $message);
 							}
 							else
 							{
 								// Get the user saved in DB
-								$user = self::$ci->user_model->find_user($user['username']);
-
+								$user = self::$ci->user_model->find_user($user['email']);
 								if (is_array($user))
 								{
 									// Must be set before set the clear password
 									$user['activation_key'] = User()->calc_activation_key($user);
-
 									$user['password'] = User()->decrypt($user['password'], $user);
-
 									// Merge POST data for email template
 									$user = array_merge($user, self::$ci->input->post());
-
 									// Create data array and Send Emails
 									$user['ip'] = self::$ci->input->ip_address();
 									TagManager_Email::send_form_emails($tag, 'register', $user);
-
 									$message = TagManager_Form::get_form_message('success');
 									TagManager_Form::set_additional_success('register', $message);
-
 									// Potentially redirect to the page setup in /application/config/forms.php
 									$redirect = TagManager_Form::get_form_redirect();
 									if ($redirect !== FALSE) redirect($redirect);
@@ -388,31 +336,25 @@ class TagManager_User extends TagManager
 						else
 						{
 							Event::fire('User.register.check.fail', $user);
-
 							$message = TagManager_Form::get_form_message('success');
 							TagManager_Form::set_additional_success('register', $message);
-
 							$redirect = TagManager_Form::get_form_redirect();
 							if ($redirect !== FALSE) redirect($redirect);
 						}
 					}
 					break;
-
 				// Get new password
 				case 'password':
-
 					if (TagManager_Form::validate('password'))
 					{
 						$user = self::$ci->user_model->find_user(array(
 							'email' => self::$ci->input->post('email')
 						));
-
 						if ($user)
 						{
 							// Save the user with this new password
 							$new_password = User()->get_random_password(8);
 							$user['password'] = $new_password;
-
 							if ( ! User()->update($user))
 							{
 								$message = TagManager_Form::get_form_message('error');
@@ -424,13 +366,10 @@ class TagManager_User extends TagManager
 								$user = self::$ci->user_model->find_user(array(
 									'email' => self::$ci->input->post('email')
 								));
-
 								$activation_key = User()->calc_activation_key($user);
-
 								// Put the clear password to the user's data, for the email
 								//$user['password'] = $new_password;
 								$data['activation_key'] = $activation_key;
-
 								// Send Emails
 								$data['ip'] = self::$ci->input->ip_address();
 								$data['username'] = $user['username'];
@@ -439,12 +378,9 @@ class TagManager_User extends TagManager
 								$data['password'] = $new_password;
 								$data['activation_key'] = $activation_key;
 								$data['level'] = $user['role_level'];
-
 								TagManager_Email::send_form_emails($tag, 'password', $data);
-
 								$message = TagManager_Form::get_form_message('success');
 								TagManager_Form::set_additional_success('password', $message);
-
 								// Potentially redirect to the page setup in /application/config/forms.php
 								$redirect = TagManager_Form::get_form_redirect();
 								if ($redirect !== FALSE) redirect($redirect);
@@ -456,20 +392,15 @@ class TagManager_User extends TagManager
 							TagManager_Form::set_additional_error('password', $message);
 						}
 					}
-
 					break;
-
 				// Activate account
 				case 'activation':
-
 					// Done through one old plain CI controller for the moment.
 					// Adding tags for this task adds more complexity for nothing
 					// (create one page, set the page in Ionize... this all is not needed for account activation)
 					break;
-
 				// Save profile
 				case 'profile':
-
 					// Lost connection
 					if(($current_user = User()->get_user()) == NULL)
 					{
@@ -477,15 +408,12 @@ class TagManager_User extends TagManager
 						TagManager_Form::set_additional_error('profile', $message);
 						return FALSE;
 					}
-
 					// Delete the profile
 					if (self::$ci->input->post('delete'))
 					{
 						$result = User()->delete($current_user);
-
 						$message = TagManager_Form::get_form_message('deleted');
 						TagManager_Form::set_additional_success('profile', $message);
-
 						// Potentially redirect to the page setup in /application/config/forms.php
 						$redirect = TagManager_Form::get_form_redirect();
 						User()->logout($redirect);
@@ -497,23 +425,18 @@ class TagManager_User extends TagManager
 							$fields = TagManager_Form::get_form_fields('profile');
 							if ( is_null($fields))
 								show_error('No definition for the form "profile"');
-
 							$fields = array_fill_keys($fields, FALSE);
 							$user = array_merge($fields, self::$ci->input->post());
-
 							// Compliant with User, based on username
-							$user['username'] = $user['email'];
+							$user['username'] = $user['lastname'];
 							$user['id_user'] = $current_user['id_user'];
-
 							// Checkboxes and multiselect
 							foreach($user as $key => $data)
 							{
 								if (is_array($data))
 									$user[$key] = implode(',', $data);
 							}
-
 							$result = User()->update($user);
-
 							// If error here, it can only be on the email, which already exists in the DB
 							if ( ! $result)
 							{
@@ -524,7 +447,6 @@ class TagManager_User extends TagManager
 							{
 								$message = TagManager_Form::get_form_message('success');
 								TagManager_Form::set_additional_success('profile', $message);
-
 								// Potentially redirect to the page setup in /application/config/forms.php
 								$redirect = TagManager_Form::get_form_redirect();
 								if ($redirect !== FALSE) redirect($redirect);
@@ -538,18 +460,15 @@ class TagManager_User extends TagManager
 			}
 		}
 	}
-
 	public static function isResultTrue($results)
 	{
 		$return = TRUE;
-
 		if (is_array($results))
 		{
 			foreach($results as $result)
 				if ( ! $result)
 					$return = FALSE;
 		}
-
 		return $return;
 	}
 }

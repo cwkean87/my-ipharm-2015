@@ -24,14 +24,14 @@
 */
 $lang['form_label_email'] = 'Email';
 $lang['form_label_name'] = 'Name';
-$lang['form_label_firstname'] = 'First Name';
+$lang['form_label_firstname'] = 'Full Name';
 $lang['form_label_lastname'] = 'Last Name';
 $lang['form_label_subject'] = 'Subject';
 $lang['form_label_topic'] = 'Topic';
 $lang['form_label_message'] = 'Message';
-$lang['form_label_screen_name'] = 'Screen Name';
+$lang['form_label_screen_name'] = 'Profile Name';
 $lang['form_label_username'] = 'User name';
-$lang['form_label_birthdate'] = 'Birthdate';
+$lang['form_label_birthdate'] = 'Date of Birth';
 $lang['form_label_gender'] = 'Gender';
 $lang['form_label_gender_female'] = 'Female';
 $lang['form_label_gender_male'] = 'Male';
@@ -45,8 +45,8 @@ $lang['form_label_state'] = 'State';
 $lang['form_label_zip'] = 'Zip';
 $lang['form_label_login'] = 'Login';
 $lang['form_label_password'] = 'Password';
-$lang['form_label_password_confirmation'] = 'Password confirm';
-$lang['form_label_delete_account'] = 'Delete account';
+$lang['form_label_password_confirmation'] = 'Confirm Password';
+$lang['form_label_delete_account'] = 'Delete Account';
 
 
 /*
@@ -88,8 +88,8 @@ $lang['form_button_login'] = "Login";
 $lang['form_button_logout'] = "Logout";
 $lang['form_button_post'] = "Post";
 $lang['form_button_answer'] = "Answer";
-$lang['form_button_save_profile'] = "Save Profile";
-$lang['form_button_password_back'] = "Get password back";
+$lang['form_button_save_profile'] = "Update Profile";
+$lang['form_button_password_back'] = "Resend Password";
 
 /*
 |--------------------------------------------------------------------------
@@ -97,14 +97,14 @@ $lang['form_button_password_back'] = "Get password back";
 |--------------------------------------------------------------------------
 */
 // Registration : Email to Admin
-$lang['mail_website_registration_subject'] = "Someone registered on the website";
+$lang['mail_website_registration_subject'] = "New iPharma Registration";
 $lang['mail_website_registration_message'] = "Here are the details of this new member.";
 
 // Registration : Email to user
 $lang['mail_user_registration_subject'] = "Registration on %s";
 $lang['mail_user_registration_intro'] = "Dear %s,";
-$lang['mail_user_registration_message'] = "You just registered on <b>%s</b>.<br/>Here are your login information.";
-$lang['mail_user_registration_activate'] = "Before login, you need to activate your account through this link :";
+$lang['mail_user_registration_message'] = "Thank you for register <b>%s</b>.<br/>Here are your login information.";
+$lang['mail_user_registration_activate'] = "Before login, you need to activate your account through this link (Please ignore the link if you've done so) :";
 
 // New Password : Email to user
 $lang['mail_user_password_subject'] = "New password for your account on %s";
@@ -118,11 +118,11 @@ $lang['mail_website_contact_message'] = "One visitor let you a message through t
 // Contact : Email to user
 $lang['mail_user_contact_subject'] = "Thank you for your message to %s";
 $lang['mail_user_contact_intro'] = "Dear %s,";
-$lang['mail_user_contact_message'] = "Thank you for your message.<br/>We will answer you very quickly.";
+$lang['mail_user_contact_message'] = "Thank you for your message.<br/>We will get back to you as soon as possible.";
 $lang['mail_user_contact_posted_data'] = "Here are the data you submit with the form.";
 
 // Message about automatic message
-$lang['mail_automatic_message_warning'] = "This message was automatically generated. Please do not answer.";
+$lang['mail_automatic_message_warning'] = "This message was automatically generated. Please do not answer/reply.";
 
 
 /*
@@ -136,29 +136,29 @@ $lang['form_not_logged'] = "You're not logged in.";
 
 $lang['form_alert_success_title'] = 'Success !';
 $lang['form_alert_success_message'] = 'Everything was OK !';
-$lang['form_alert_error_title'] = 'Oups ! We got one error !';
+$lang['form_alert_error_title'] = 'Oups ! Error(s) occur! Please contact admin.';
 $lang['form_alert_error_message'] = 'Check the form, something is perhaps missing....';
 
-$lang['form_login_success_message'] = "You successfully logged in.";
+$lang['form_login_success_message'] = "You have successfully logged in.";
 $lang['form_login_error_message'] = "Error : Check your login / password.";
 $lang['form_login_not_found_message'] = "User not found.";
 $lang['form_login_not_activated_message'] = "This account is not activated. Check your emails and click on the activation link.";
 
-$lang['form_register_success_message'] = "You successfully registered.<br/>We just sent you an email with your account activation instructions.";
+$lang['form_register_success_message'] = "You have successfully registered.<br/>Please check your email for account activation instructions.";
 $lang['form_register_error_message'] = "Error : Registration not successful.";
 
 $lang['form_profile_success_message'] = "Profile data saved";
-$lang['form_profile_error_message'] = "This user already exists. Please change your username or email";
+$lang['form_profile_error_message'] = "This user already exists. Please change your Staff ID or email";
 $lang['form_profile_account_deleted'] = "Account deleted";
 
-$lang['form_password_error_message'] = "Oups, one error occured.";
+$lang['form_password_error_message'] = "Oups, error(s) occured! Please contact admin.";
 $lang['form_password_not_found_message'] = "This email seems not to be in our system";
-$lang['form_password_success_message'] = "One email with you new password has just been sent to you.";
+$lang['form_password_success_message'] = "An email with your new password has just been sent to your registered email.";
 
 $lang['form_contact_error_title'] = 'Oups, we got an error.';
-$lang['form_contact_error_message'] = 'perhaps just some missing fields. Please check the form...';
+$lang['form_contact_error_message'] = 'Perhaps just some missing fields. Please check the form...';
 $lang['form_contact_success_title'] = 'Your message was sent successfully !';
-$lang['form_contact_success_message'] = 'Thank you for your message, we will answer you very quickly !';
+$lang['form_contact_success_message'] = 'Thank you for your message, we will get back to you as soon as possible !';
 
 $lang['form_note_password_change'] = 'Leave it empty if you don\'t want to change your password.';
 
