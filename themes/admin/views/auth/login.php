@@ -82,7 +82,7 @@
 
 			<div id="logo"></div>
 
-			<div id="version"><?php echo $this->config->item('version'); ?> - Ionize CMS - MIT licence</div>
+			<div id="version"><?php echo $this->config->item('version'); ?> - iPharma - MIT License</div>
 
 			<?php if(validation_errors() OR isset($this->login_errors)):?>
 				<div class="error">

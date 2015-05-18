@@ -2,7 +2,6 @@
 
 <ion:partial view="page_header" />
 
-
 <div class="row">
 	<div class="large-8 small-12 columns">
 
@@ -19,7 +18,7 @@
 		
         <!--
 			Success message
-			Displayed if the form was successfuly validated
+			Displayed if the form was successfully validated
 		-->
 		<ion:form:contact:validation:success is="true">
 			<div class="alert-box success">
@@ -56,12 +55,12 @@
 			<!-- Input : Name -->
 
 			<label for="name"><ion:lang key="form_label_name" /></label>
-			<input name="name" type="text" id="name" value="<ion:form:contact:field:name />"<ion:form:contact:error:name is="true"> class="error" </ion:form:contact:error:name>/>
+			<input name="name" type="text" id="name" value="<ion:user:form:profile:field:screen_name />"<ion:form:contact:error:name is="true"> class="error" </ion:form:contact:error:name>/>
 			<ion:form:contact:error:name tag="small" class="error" />
 
 			<!-- Input : Email -->
 			<label for="email"><ion:lang key="form_label_email" /></label>
-			<input name="email" type="text" id="email" value="<ion:form:contact:field:email />"<ion:form:contact:error:email is="true"> class="error" </ion:form:contact:error:email> />
+			<input name="email" type="text" id="email" value="<ion:user:form:profile:field:email />"<ion:form:contact:error:email is="true"> class="error" </ion:form:contact:error:email> />
 			<ion:form:contact:error:email tag="small" class="error" />
 
 
@@ -102,10 +101,6 @@
 			</ion:medias>
             </ion:article>
 		</ion:page:articles>
-		
 	</div>
 </div>
-
-	
-
 <ion:partial view="footer" />

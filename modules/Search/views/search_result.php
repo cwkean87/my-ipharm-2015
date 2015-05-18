@@ -12,7 +12,7 @@
 	  <ion:else>
 		    <ion:search:results>
 		        <ion:result>
-		          <div>
+		          <div class="search-result">
 		                <h6><a href="<ion:url />"><ion:title /></a></h6>
 		                <ion:content words="30" /><a href="<ion:url />"><ion:lang key="module_search_read_complete_article" /></a>
 		            </div>

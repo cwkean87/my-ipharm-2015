@@ -1,9 +1,8 @@
 <ion:partial view="header" />
 
 <ion:partial view="page_header" />
-
-
 <div class="row">
+<style>.columns {margin-bottom:5px;}</style>
 	<div class="large-9 columns">
 
 		<!-- Current category -->
@@ -177,4 +176,4 @@
 
 
 <!-- Partial : Footer -->
-<ion:partial view="footer" />
+<ion:partial view="footer" /> 

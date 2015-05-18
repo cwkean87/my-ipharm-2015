@@ -53,14 +53,14 @@ class TagManager_Contact extends TagManager
 			// The log files are located in : /application/logs/log-YYYY-MM-DD.php
 			// We prefer to log our 'dev' data as 'error' to not see the all CodeIgniter 'debug' messages.
 
-			$post = self::$ci->input->post();
+			$posted = self::$ci->input->post();
 			// trace($posted);
 			// log_message('error', print_r($posted, TRUE));
 
 			// SFS : Fires the event declared in Stop Form Spam module config
 			// Do we go further in the form processing ? Yes by default.
 			$go_further = TRUE;
-			$results = Event::fire('Form.contact.check', $post);
+			$results = Event::fire('Form.contact.check', $posted);
 
 			if (is_array($results))
 			{
@@ -73,7 +73,7 @@ class TagManager_Contact extends TagManager
 			{
 				// Send the posted data to the Email library and send the Email
 				// as defined in /themes/your_theme/config/forms.php
-				TagManager_Email::send_form_emails($tag, $form_name, $post);
+				TagManager_Email::send_form_emails($tag, $form_name, $posted);
 
 				// Add one custom Success message
 				// Get the messages key defined in : /themes/your_theme/config/forms.php

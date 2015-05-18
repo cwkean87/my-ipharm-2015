@@ -1,0 +1,217 @@
+<ion:partial view="header" />
+
+<ion:partial view="page_header" />
+
+
+  <div class="row">
+        <div class="small-6" style="margin:0px auto;">
+
+      <!-- User not logged in -->
+            <ion:user:logged is="false">
+
+        <!-- Articles of this page with the type "not-logged-in" -->
+        <ion:page:articles type="not-logged-in">
+          <ion:article>
+            <ion:title tag="h3" />
+            <ion:content />
+          </ion:article>
+        </ion:page:articles>
+
+        <!--
+          LOGIN : Error message
+        -->
+        <ion:form:login:validation:error is="true" >
+          <div class="alert-box alert">
+            <ion:lang key="form_alert_error_title" tag="h4" />
+            <ion:form:login:validation:error tag="p" />
+            <a href="" class="close">×</a>
+          </div>
+        </ion:form:login:validation:error>
+
+
+        <!--
+          PASSWORD BACK : Success message
+        -->
+        <ion:form:password:validation:success is="true">
+          <div class="alert-box success">
+            <ion:lang key="form_alert_success_title" tag="h4" />
+            <ion:lang key="form_register_success_message" tag="p" />
+            <a href="" class="close">×</a>
+          </div>
+        </ion:form:password:validation:success>
+
+        <!--
+          PASSWORD BACK : Error message
+        -->
+        <ion:form:password:validation:error is="true" >
+          <div class="alert-box alert">
+            <ion:lang key="form_alert_error_title" tag="h4" />
+            <ion:form:password:validation:error tag="p" />
+            <a href="" class="close">×</a>
+          </div>
+        </ion:form:password:validation:error>
+        
+        <div class="side-block">
+    </ion:user:logged >
+                <ion:user:logged is="false">
+
+          <!-- Login form 
+                    <h3><ion:lang key="title_login" /></h3>-->
+
+                    <form method="post" action="">
+                        <input type="hidden" name="form" value="login" />
+            <div class="login-form">
+                        <!-- The username is used to log in the user -->
+            <label for="username">Staff ID</label>
+            <input type="text" id="username" name="username" value="<ion:form:login:field:username />" required />
+            <ion:form:login:error:username tag="p" class="input-error" />
+                        <label for="password"><ion:lang key="form_label_password" /></label>
+                        <input type="password" id="password" name="password" />
+                        <ion:form:login:error:password tag="small" class="error" />
+                        <input type="submit" class="button success" value="<ion:lang key='form_button_login' />" />
+            </div>
+          </form>
+          
+      <script>
+            $(document).ready(function(){
+              $(".forgotpass").hide();
+              $(".togg").click(function(){
+              $(".forgotpass").show('slow');
+              });
+            });
+            </script>
+
+                    <!-- Password back form -->
+                    <div class="togg"><ion:lang key="title_password_back" /></div>
+
+          <div class="forgotpass">
+                    <form method="post" action="">
+                        <input type="hidden" name="form" value="password" />
+                        <label for="email-back"><ion:lang key="form_label_email" /></label>
+                        <input type="text" name="email" id="email-back" />
+                        <input type="submit"  class="button success" value="Reset" />
+                    </form>
+          </div>
+        </ion:user:logged>
+          
+    </div>
+<div class="login">
+        <div class="login-screen">
+          <div class="login-icon">
+            <img src="<ion:theme_url />assets/images/login/icon.png" alt="Welcome to Mail App" />
+            <h4>Welcome to <small>Mail App</small></h4>
+          </div>
+
+          <div class="login-form">
+            <div class="form-group">
+              <input type="text" class="form-control login-field" value="" placeholder="Enter your name" id="login-name" />
+              <label class="login-field-icon fui-user" for="login-name"></label>
+            </div>
+
+            <div class="form-group">
+              <input type="password" class="form-control login-field" value="" placeholder="Password" id="login-pass" />
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+
+            <a class="btn btn-primary btn-lg btn-block" href="#">Log in</a>
+            <a class="login-link" href="#">Lost your password?</a>
+          </div>
+        </div>
+      </div>
+            <!-- User logged in -->
+        <ion:user:logged is="true">
+
+                <!-- Articles of this page with the type "logged-in" -->
+                <ion:page:articles type="logged-in">
+                    <ion:article>
+                      <h3 style="text-align:center;"><ion:title /> <ion:user:name /></h3>
+                        <ion:content />
+                    </ion:article>
+                </ion:page:articles>
+        <!--
+          PROFILE : Success message
+        -->
+        <ion:form:profile:validation:success is="true">
+          <div class="alert-box success">
+            <ion:lang key="form_alert_success_title" tag="h4" />
+            <ion:form:profile:validation:success tag="p" />
+            <a href="" class="close">×</a>
+          </div>
+        </ion:form:profile:validation:success>
+
+        <!--
+          PROFILE : Error message
+        -->
+        <ion:form:profile:validation:error is="true">
+          <div class="alert-box alert">
+            <ion:lang key="form_alert_error_title" tag="h4" />
+            <ion:form:profile:validation:error tag="p" />
+            <a href="" class="close">×</a>
+          </div>
+          
+        </ion:form:profile:validation:error>
+        <!-- Profile form -->
+                <form method="post" action="" class="custom">
+                    <input type="hidden" name="form" value="profile" />
+          <div class="login-form">
+                    <label for="firstname-profile"  <ion:form:profile:error:firstname is='true' return=' class="error"' />>
+                      <ion:lang key="form_label_firstname" />
+                    </label>
+                    <input type="text" name="firstname" id="firstname-profile" value="<ion:user:form:profile:field:firstname />" />
+                    <ion:form:profile:error:firstname tag="small" class="error" />
+
+                    <label for="lastname-profile">
+                        <ion:lang key="form_label_staffid" />
+                    </label>
+                    <input readonly style="color:gray;" type="text" name="lastname" id="lastname-profile" value="<ion:user:form:profile:field:lastname />"/>
+                    <ion:form:profile:error:lastname tag="small" class="error" />
+
+                    <label for="screen_name-profile">
+                        <ion:lang key="form_label_screen_name" />
+                    </label>
+                    <input type="text" id="screen_name-profile" name="screen_name" value="<ion:user:form:profile:field:screen_name/>" />
+                    <ion:form:profile:error:screen_name tag="small" class="error" />
+                    <br/>
+
+                    <label for="email-profile" <ion:form:profile:error:email is='true' return=' class="error"' /> >
+                      <ion:lang key="form_label_email" />
+                    </label>
+                    <input type="text" name="email" id="email-profile" value="<ion:user:form:profile:field:email />" />
+                    <ion:form:profile:error:email tag="small" class="error" />
+          </div>
+            <script>
+            $(document).ready(function(){
+              $("#changepass").hide();
+              $(".togg").click(function(){
+              $("#changepass").show('slow');
+              });
+            });
+            </script>
+          <div class="togg">Change Password</div>
+          <div id="changepass">
+            <p class="note" style="color:red"><ion:lang key="form_note_password_change" /></p>
+                    <input type="password" name="password" id="password-profile" />
+                    <ion:form:profile:error:password tag="small" class="error" />
+          <label for="password-confirm-profile">
+                        <ion:lang key="form_label_password_confirmation" />
+                    </label>
+                    <input type="password" name="password2" id="password-confirm-profile" />
+                    <ion:form:profile:error:password tag="small" class="error" />
+          </div>
+          <div style="text-align:center;">
+                    <input type="submit" class="button success" value="<ion:lang key='form_button_save_profile' />" />
+          </div>
+                </form>
+
+      </ion:user:logged>
+    </div>
+
+    <!-- Side bar -->
+    <div class="large-3 small-12 columns">
+  
+    </div>
+    </div>
+
+
+
+<ion:partial view="footer" />

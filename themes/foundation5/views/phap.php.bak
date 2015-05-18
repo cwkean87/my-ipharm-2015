@@ -1,0 +1,906 @@
+<ion:partial view="header" />
+
+	<ion:partial view="page_header" />
+		
+    <div class="ss-form-container">
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+		</script>
+
+		<script type="text/javascript">
+		  function initialize() {
+		  var virus = '34HGT4kjtHR';
+			// Send the JSONP request using jQuery
+			$.ajax({
+			  url: 'data.php',
+			  dataType: 'json',
+			  success: function (data) {
+				var rows = data['rows'];
+				var ftData = document.getElementById('ft-data');
+				for (var i in rows) {
+				  var initial = rows[i][0];
+				  var assessmentDate = rows[i][1];
+				  var consentDate = rows[i][2];
+				  var age = rows[i][3];
+				  var clientInitial = document.getElementById('entry_719698241').value;
+				  
+				  if(initial == clientInitial)
+				  {
+					document.getElementById('entry_2091338872').value = $.datepicker.formatDate('yy-mm-dd', new Date(assessmentDate));
+					document.getElementById('entry_1957734276').value = $.datepicker.formatDate('yy-mm-dd', new Date(consentDate));
+					break;
+				  } 
+				}
+			  }
+			});
+		  }
+		</script>
+		<style>
+		@import "<ion:theme_url />assets/css/gform.css"
+		.ss-form-question.errorbox-good {
+		  display: inline-block;
+		  vertical-align: bottom;
+		  width: 20%;
+		  background-color: white;
+		  position: relative;
+		  margin: 3px;
+		  border-radius: 5px;
+		}
+		</style>
+        <div class="ss-form">
+		<script type="text/javascript">
+			var submitted = false;
+			var myLink = "http://pharmfair.com/ipharma/confirmation";	
+		</script>
+		<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location=myLink;}"></iframe>
+          <form action="https://docs.google.com/forms/d/1tDIRge3ZLON4xEC8ITz6HgwLjYOsXWWL7qnUgbdu1vE/formResponse" id="ss-form" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+			<ol role="list" class="ss-question-list">
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:15%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_715982338">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-user"></span>
+                        Name 
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                        <span class="ss-required-asterisk">
+                          *
+                        </span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="text" placeholder="Your name" style="text-transform:uppercase;" name="entry.715982338" value="<ion:user:form:profile:field:screen_name />" class="ss-q-short" id="entry_715982338" dir="auto" aria-label="Name  Name of Health Ambassador " aria-required="true" required="" title="">
+                    <div class="error-message" id="2140727959_errorMessage">
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:23%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1499993480">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-envelope"></span>
+                        Email
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                        <span class="ss-required-asterisk">
+                          *
+                        </span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="text" name="entry.1499993480" value="<ion:user:form:profile:field:email />" placeholder="Gmail Only" class="ss-q-short" id="entry_1499993480" dir="auto" aria-label="Email Email of Health Ambassador (must be a google account) Please provide a valid gmail address" aria-required="true" required="" pattern=".*^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$.*" title="Please provide a valid gmail address">
+                    <div class="error-message" id="571736000_errorMessage">
+                      Please provide a valid Gmail address
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:18%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_719698241">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-italic"></span>
+                        Client Initials
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                        <span class="ss-required-asterisk">
+                          *
+                        </span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input onchange="initialize()" type="text" name="entry.719698241" value="" class="ss-q-short" id="entry_719698241" dir="auto" aria-label="Client Initial  " aria-required="true" required="" title="">
+                    <div class="error-message" id="2015533302_errorMessage">
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+			  <div class="ss-form-question errorbox-good" role="listitem" style="width:15%;">
+                <div dir="ltr" class="ss-item  ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1593488944">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-phone-alt"></span>
+                        Contact
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="text" placeholder="Mobile, email and etc..." name="entry.1593488944" value="" class="ss-q-short" id="entry_1593488944" dir="auto" aria-label="Contact e.g: Mobile number, email and etc... " title="">
+                    <div class="error-message" id="651631725_errorMessage">
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:6%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1233470956">
+                      <div class="ss-q-title">
+                        Age
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="number" name="entry.1233470956" value="" class="ss-q-short" id="entry_1233470956" dir="auto" aria-label="Age  Must be a number greater than 0" step="any" title="Must be a number greater than 0">
+                    <div class="error-message" id="1603557867_errorMessage">
+                      Number between 1 to 120
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:15%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-radio">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_54677125">
+                      <div class="ss-q-title">
+                        Gender
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    
+                    <ul class="ss-choices" role="radiogroup" aria-label="Gender  ">
+                      <li class="ss-choice-item">
+                        <label>
+                          <span class="ss-choice-item-control goog-inline-block">
+                            <input type="radio" name="entry.223098628" value="Female" id="group_223098628_1" role="radio" class="ss-q-radio" aria-label="Female">
+                          </span>
+                          <span class="ss-choice-label">
+                            Female
+                          </span>
+                        </label>
+                      </li>
+                      
+                      <li class="ss-choice-item">
+                        <label>
+                          <span class="ss-choice-item-control goog-inline-block">
+                            <input type="radio" name="entry.223098628" value="Male" id="group_223098628_2" role="radio" class="ss-q-radio" aria-label="Male">
+                          </span>
+                          <span class="ss-choice-label">
+                            Male
+                          </span>
+                        </label>
+                      </li>
+                    </ul>
+                    <div class="error-message" id="54677125_errorMessage">
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+			  <div class="separator"></div>
+			  <div class="ss-form-question errorbox-good" role="listitem" style="width:24%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-date">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1616519041">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-calendar"></span>
+                        Date of Current Follow Up
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                        <span class="ss-required-asterisk">
+                          *
+                        </span>
+						<span data-placement="left" class="glyphicon glyphicon-info-sign" style="font-size:1rem;" data-toggle="tooltip" data-original-title="Input the date of the current session with the client."></span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="date" style="width:95%;" onchange="entry_1399982238.value = (this.valueAsDate - entry_2091338872.valueAsDate)/24/3600/1000;" name="entry.1616519041" value="" class="ss-q-date" dir="auto" id="entry_1616519041" aria-label="Date of Current Follow Up  " aria-required="true" required="">
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:25%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-date">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_2091338872">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-calendar"></span>
+                        Date of Initial Assessment
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                        <span class="ss-required-asterisk">
+                          *
+                        </span>
+						<span data-placement="left" class="glyphicon glyphicon-info-sign" style="font-size:1rem;" data-toggle="tooltip" data-original-title="Input the date of the first session with the client. For patients obtained through health screening, this would be the date of the health screening."></span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="date" style="width:95%;" onchange="entry_1399982238.value = (entry_1616519041.valueAsDate - this.valueAsDate)/24/3600/1000;" name="entry.2091338872" value="" class="ss-q-date" dir="auto" id="entry_2091338872" aria-label="Date of Initial Assessment  " aria-required="true" required="">
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:23%;">
+				  <div dir="ltr" class="ss-item  ss-date">
+					<div class="ss-form-entry">
+					  <label class="ss-q-item-label" for="entry_1957734276">
+						<div class="ss-q-title">
+						<span class="glyphicon glyphicon-calendar"></span>
+						  Date of Obtained Consent
+						  <span class="glyphicon glyphicon-info-sign" style="font-size:1rem;" data-placement="left" data-toggle="tooltip" data-original-title="Usually the same as the “Date of Initial Assessment”. Input the date when the patient had verbally consented to provide his/her personal information for PHAP."></span>
+						</div>
+						
+						<div class="ss-q-help ss-secondary-text" dir="ltr">
+						</div>
+					  </label>
+					  <input type="date" style="width:95%;" name="entry.1957734276" value="" class="ss-q-date" dir="auto" id="entry_1957734276" aria-label="Date of Obtained Consent  ">
+					  <div class="required-message">
+						This is a required question
+					  </div>
+					</div>
+				  </div>
+				</div>
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:15%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1399982238">
+                      <div class="ss-q-title">
+                        Time Interval
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                        
+                      </div>
+                    </label>
+                    <input type="number" placeholder="Auto-calculated" onchange="this.value = (entry_1616519041.valueAsDate - entry_2091338872.valueAsDate)/24/3600/1000;" name="entry.1399982238" aria-required="true" required="" value="" class="ss-q-short" id="entry_1399982238" dir="auto" aria-label="Time Interval Auto-calculated Must be a number greater than 0" step="any" title="Must be a number greater than 0">
+                    <div class="error-message" id="597570919_errorMessage">
+                      Must be a number greater than 0
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+			  <div class="separator"></div>
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:23%">
+                <div dir="ltr" class="ss-item ss-item-required ss-select">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1351246409">
+                      <div class="ss-q-title">
+                        Type of Follow Up
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                        <span class="ss-required-asterisk">
+                          *
+                        </span>
+						<span class="glyphicon glyphicon-info-sign" style="font-size:1rem;" data-toggle="tooltip" data-original-title="Focus Topics:1. Diabetes, 2. High Blood Pressure, 3. Stroke, 4. Weight Management, 5. Smoking Cessation, 6. Mental Health"></span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <select name="entry.1351246409" id="entry_1351246409" aria-label="Type of Follow Up  " aria-required="true" required="">
+                      <option value="">
+                      </option>
+                      <option value="Diabetes">
+                        Diabetes
+                      </option>
+                      
+                      <option value="High Blood Pressure">
+                        High Blood Pressure
+                      </option>
+                      
+                      <option value="High Blood Cholesterol">
+                        High Blood Cholesterol
+                      </option>
+                      
+                      <option value="Stroke">
+                        Stroke
+                      </option>
+                      
+                      <option value="Heart and Vascular Diseases">
+                        Heart and Vascular Diseases
+                      </option>
+                      
+                      <option value="Asthma">
+                        Asthma
+                      </option>
+                      
+                      <option value="COPD">
+                        COPD
+                      </option>
+                      
+                      <option value="Epilepsy">
+                        Epilepsy
+                      </option>
+                      
+                      <option value="Lung and Airway Disease">
+                        Lung and Airway Disease
+                      </option>
+                      
+                      <option value="Migraine">
+                        Migraine
+                      </option>
+                      
+                      <option value="Osteoarthritis">
+                        Osteoarthritis
+                      </option>
+                      
+                      <option value="Osteoporosis">
+                        Osteoporosis
+                      </option>
+                      
+                      <option value="Parkinson&#39;s Disease">
+                        Parkinson&#39;s Disease
+                      </option>
+                      
+                      <option value="Gastric Ulcer">
+                        Gastric Ulcer
+                      </option>
+                      
+                      <option value="GERD">
+                        GERD
+                      </option>
+                      
+                      <option value="Eczema">
+                        Eczema
+                      </option>
+                      
+                      <option value="Allergic Rhinitis">
+                        Allergic Rhinitis
+                      </option>
+                      
+                      <option value="Weight Management">
+                        Weight Management
+                      </option>
+                      
+                      <option value="Smoking Cessation">
+                        Smoking Cessation
+                      </option>
+                      
+                      <option value="Mental Health">
+                        Mental Health
+                      </option>
+                    </select>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:23%">
+                <div dir="ltr" class="ss-item  ss-select">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_547156134">
+                      <div class="ss-q-title">
+                        Type of Follow Up 2
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <select name="entry.547156134" id="entry_547156134" aria-label="Type of Follow Up 2  ">
+                      <option value="">
+                      </option>
+                      <option value="NIL">
+                        NIL
+                      </option>
+                      
+                      <option value="Diabetes">
+                        Diabetes
+                      </option>
+                      
+                      <option value="High Blood Pressure">
+                        High Blood Pressure
+                      </option>
+                      
+                      <option value="High Blood Cholesterol">
+                        High Blood Cholesterol
+                      </option>
+                      
+                      <option value="Stroke">
+                        Stroke
+                      </option>
+                      
+                      <option value="Heart and Vascular Diseases">
+                        Heart and Vascular Diseases
+                      </option>
+                      
+                      <option value="Asthma">
+                        Asthma
+                      </option>
+                      
+                      <option value="COPD">
+                        COPD
+                      </option>
+                      
+                      <option value="Epilepsy">
+                        Epilepsy
+                      </option>
+                      
+                      <option value="Lung and Airway Disease">
+                        Lung and Airway Disease
+                      </option>
+                      
+                      <option value="Migraine">
+                        Migraine
+                      </option>
+                      
+                      <option value="Osteoarthritis">
+                        Osteoarthritis
+                      </option>
+                      
+                      <option value="Osteoporosis">
+                        Osteoporosis
+                      </option>
+                      
+                      <option value="Parkinson&#39;s Disease">
+                        Parkinson&#39;s Disease
+                      </option>
+                      
+                      <option value="Gastric Ulcer">
+                        Gastric Ulcer
+                      </option>
+                      
+                      <option value="GERD">
+                        GERD
+                      </option>
+                      
+                      <option value="Eczema">
+                        Eczema
+                      </option>
+                      
+                      <option value="Allergic Rhinitis">
+                        Allergic Rhinitis
+                      </option>
+                      
+                      <option value="Weight Management">
+                        Weight Management
+                      </option>
+                      
+                      <option value="Smoking Cessation">
+                        Smoking Cessation
+                      </option>
+                      
+                      <option value="Mental Health">
+                        Mental Health
+                      </option>
+                    </select>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:23%">
+                <div dir="ltr" class="ss-item  ss-select">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1116918819">
+                      <div class="ss-q-title">
+                        Type of Follow Up 3
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <select name="entry.1116918819" id="entry_1116918819" aria-label="Type of Follow Up 3  ">
+                      <option value="">
+                      </option>
+                      <option value="NIL">
+                        NIL
+                      </option>
+                      
+                      <option value="Diabetes">
+                        Diabetes
+                      </option>
+                      
+                      <option value="High Blood Pressure">
+                        High Blood Pressure
+                      </option>
+                      
+                      <option value="High Blood Cholesterol">
+                        High Blood Cholesterol
+                      </option>
+                      
+                      <option value="Stroke">
+                        Stroke
+                      </option>
+                      
+                      <option value="Heart and Vascular Diseases">
+                        Heart and Vascular Diseases
+                      </option>
+                      
+                      <option value="Asthma">
+                        Asthma
+                      </option>
+                      
+                      <option value="COPD">
+                        COPD
+                      </option>
+                      
+                      <option value="Epilepsy">
+                        Epilepsy
+                      </option>
+                      
+                      <option value="Lung and Airway Disease">
+                        Lung and Airway Disease
+                      </option>
+                      
+                      <option value="Migraine">
+                        Migraine
+                      </option>
+                      
+                      <option value="Osteoarthritis">
+                        Osteoarthritis
+                      </option>
+                      
+                      <option value="Osteoporosis">
+                        Osteoporosis
+                      </option>
+                      
+                      <option value="Parkinson&#39;s Disease">
+                        Parkinson&#39;s Disease
+                      </option>
+                      
+                      <option value="Gastric Ulcer">
+                        Gastric Ulcer
+                      </option>
+                      
+                      <option value="GERD">
+                        GERD
+                      </option>
+                      
+                      <option value="Eczema">
+                        Eczema
+                      </option>
+                      
+                      <option value="Allergic Rhinitis">
+                        Allergic Rhinitis
+                      </option>
+                      
+                      <option value="Weight Management">
+                        Weight Management
+                      </option>
+                      
+                      <option value="Smoking Cessation">
+                        Smoking Cessation
+                      </option>
+                      
+                      <option value="Mental Health">
+                        Mental Health
+                      </option>
+                    </select>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:23%">
+                <div dir="ltr" class="ss-item  ss-select">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_731623213">
+                      <div class="ss-q-title">
+                        Type of Follow Up 4
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <select name="entry.731623213" id="entry_731623213" aria-label="Type of Follow Up 4  ">
+                      <option value="">
+                      </option>
+                      <option value="NIL">
+                        NIL
+                      </option>
+                      
+                      <option value="Diabetes">
+                        Diabetes
+                      </option>
+                      
+                      <option value="High Blood Pressure">
+                        High Blood Pressure
+                      </option>
+                      
+                      <option value="High Blood Cholesterol">
+                        High Blood Cholesterol
+                      </option>
+                      
+                      <option value="Stroke">
+                        Stroke
+                      </option>
+                      
+                      <option value="Heart and Vascular Diseases">
+                        Heart and Vascular Diseases
+                      </option>
+                      
+                      <option value="Asthma">
+                        Asthma
+                      </option>
+                      
+                      <option value="COPD">
+                        COPD
+                      </option>
+                      
+                      <option value="Epilepsy">
+                        Epilepsy
+                      </option>
+                      
+                      <option value="Lung and Airway Disease">
+                        Lung and Airway Disease
+                      </option>
+                      
+                      <option value="Migraine">
+                        Migraine
+                      </option>
+                      
+                      <option value="Osteoarthritis">
+                        Osteoarthritis
+                      </option>
+                      
+                      <option value="Osteoporosis">
+                        Osteoporosis
+                      </option>
+                      
+                      <option value="Parkinson&#39;s Disease">
+                        Parkinson&#39;s Disease
+                      </option>
+                      
+                      <option value="Gastric Ulcer">
+                        Gastric Ulcer
+                      </option>
+                      
+                      <option value="GERD">
+                        GERD
+                      </option>
+                      
+                      <option value="Eczema">
+                        Eczema
+                      </option>
+                      
+                      <option value="Allergic Rhinitis">
+                        Allergic Rhinitis
+                      </option>
+                      
+                      <option value="Weight Management">
+                        Weight Management
+                      </option>
+                      
+                      <option value="Smoking Cessation">
+                        Smoking Cessation
+                      </option>
+                      
+                      <option value="Mental Health">
+                        Mental Health
+                      </option>
+                    </select>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+				<div class="separator"></div>			  
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:30%;">
+                <div dir="ltr" class="ss-item ss-item-required ss-paragraph-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_354374026">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-pencil"></span>
+                        Clinical Notes
+                        <label for="itemView.getDomIdToLabel()" aria-label="(Required field)">
+                        </label>
+                        <span class="ss-required-asterisk">
+                          *
+                        </span>
+						<span class="glyphicon glyphicon-info-sign" style="font-size:1rem;" data-placement="bottom" data-toggle="tooltip" data-original-title="Please input any pertinent information. E.g. concurrent medical conditions, medication, signs and symptoms, lab test results, drug related problems."></span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <textarea name="entry.354374026" rows="6" cols="4" placeholder="No character limits" class="ss-q-long" id="entry_354374026" dir="auto" aria-label="Clinical Notes No character limits " aria-required="true" required=""></textarea>
+                    <div class="error-message" id="720431454_errorMessage">
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:30%;">
+                <div dir="ltr" class="ss-item  ss-paragraph-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_951685783">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-pencil"></span>
+                        Recommendation
+						<span class="glyphicon glyphicon-info-sign" style="font-size:1rem;" data-toggle="tooltip" data-original-title="To input advice and intervention you carried out."></span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <textarea name="entry.951685783" rows="6" cols="4" placeholder="No character limits" class="ss-q-long" id="entry_951685783" dir="auto" aria-label="Recommendation No character limits "></textarea>
+                    <div class="error-message" id="1210391800_errorMessage">
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:30%;">
+                <div dir="ltr" class="ss-item  ss-paragraph-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_1260698601">
+                      <div class="ss-q-title">
+					  <span class="glyphicon glyphicon-pencil"></span>
+                        Follow Up Clinical Notes
+						<span class="glyphicon glyphicon-info-sign" style="font-size:1rem;" data-toggle="tooltip" data-placement="bottom" data-original-title="To input any pertinent information gathered during the current follow-up consultation. You may also use this column to input reasons for the outcome rating, e.g. changes in condition, any further recommendations given, difficulties encountered by the patient, new signs and symptoms or lab results."></span>
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <textarea name="entry.1260698601" rows="6" cols="4" placeholder="No character limits" class="ss-q-long" id="entry_1260698601" dir="auto" aria-label="Follow Up Clinical Notes No character limits "></textarea>
+                    <div class="error-message" id="217592071_errorMessage">
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="separator"></div>
+              <div class="ss-form-question errorbox-good" role="listitem" style="width:36%">
+		<div dir="ltr" class="ss-item  ss-select">
+        <div class="ss-form-entry">
+            <label class="ss-q-item-label" for="entry_163180713">
+                <div class="ss-q-title">Outcome
+				</div>
+                <div class="ss-q-help ss-secondary-text" dir="ltr"></div>
+            </label>
+            <select name="entry.163180713" id="entry_163180713" aria-label="Outcome  ">
+                <option value=""></option>
+                <option value="Improved">Improved</option>
+                <option value="Unchanged-with patient remaining in ideal/ good condition">Unchanged-with patient remaining in ideal/ good condition</option>
+                <option value="Unchanged-with patient remaining in non-ideal condition">Unchanged-with patient remaining in non-ideal condition</option>
+                <option value="Worsen">Worsen</option>
+                <option value="Loss to follow-up">Loss to follow-up</option>
+            </select>
+						<div class="required-message">This is a required question</div>
+					</div>
+				</div>
+			</div>
+              <div class="ss-form-question errorbox-good" role="listitem">
+                <div dir="ltr" class="ss-item  ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_569724504">
+                      <div class="ss-q-title">
+                        Number of Follow Up
+						
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="number" style="width:80%" name="entry.569724504" value="" class="ss-q-short" id="entry_569724504" dir="auto" aria-label="Number of Follow Up  Must be a number" step="any" min="0.0" aria-valuemin="0.0" title="Must be a number">
+                    <div class="error-message" id="235654034_errorMessage">
+                      Number between 0 to 100
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+			  <div class="ss-form-question errorbox-good" role="listitem" style="width:30%;">
+                <div dir="ltr" class="ss-item  ss-text">
+                  <div class="ss-form-entry">
+                    <label class="ss-q-item-label" for="entry_476818104">
+                      <div class="ss-q-title">
+                        Number of Recommendations
+						
+                      </div>
+                      <div class="ss-q-help ss-secondary-text" dir="ltr">
+                      </div>
+                    </label>
+                    <input type="number" style="width:50%" name="entry.476818104" value="" class="ss-q-short" id="entry_476818104" dir="auto" aria-label="Number of Recommendations  Must be a number" step="any" min="0.0" aria-valuemin="0.0" title="Must be a number">
+                    <div class="error-message" id="1506669989_errorMessage">
+                      Number between 0 to 100
+                    </div>
+                    <div class="required-message">
+                      This is a required question
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+			  <div class="ss-form-question errorbox-good" role="listitem" style="width:90%;">              
+				<div dir="ltr" class="ss-item  ss-checkbox"><div class="ss-form-entry">
+				<ul class="ss-choices" role="group" aria-label="Email Notification  "><li class="ss-choice-item"><label><span class="ss-choice-item-control goog-inline-block">
+				<input style="width:20px;height:20px;" type="checkbox" name="entry.118658788" value="No" id="group_118658788_1" role="checkbox" class="ss-q-checkbox"></span>
+				<span class="ss-choice-label" style="font-size: 1.2rem;" data-toggle="tooltip" data-original-title="A confirmation email will be sent to you after you submitted your entry.">
+				I don't want to receive email notification for this entry.
+				</span>
+				</label></li></ul>
+				<div class="error-message" id="789991435_errorMessage"></div>
+				<div class="required-message">This is a required question</div></div></div></div>
+              <input type="hidden" name="draftResponse" value="[,,&quot;7784656215368977107&quot;]">
+              <input type="hidden" name="pageHistory" value="0">
+              
+              
+              <input type="hidden" name="fbzx" value="7784656215368977107">
+              
+              <div class="ss-item ss-navigate">
+                <table id="navigation-table">
+                  <tbody>
+                    <tr>
+                      <td class="ss-form-entry goog-inline-block" id="navigation-buttons" dir="ltr">
+                        <input type="submit" name="submit" value="Submit" id="ss-submit" class="jfk-button jfk-button-action ">
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </ol>
+          </form>
+        </div>
+	</div>
+<div id="docs-aria-speakable" class="docs-a11y-ariascreenreader-speakable docs-offscreen" aria-live="assertive" role="region" aria-atomic></div>
+
+</div>
+  <!-- container -->
+<ion:partial view="footer" />
+

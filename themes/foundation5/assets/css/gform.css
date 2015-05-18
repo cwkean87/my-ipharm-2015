@@ -1,0 +1,268 @@
+body {
+        background-position: left top;
+		font-family: "Roboto";
+        color: rgb(15,132,136);
+        font-weight: 400;
+        font-size: 1.20rem;
+        font-style: normal;
+      }
+	  #logout{
+	  float: right;
+	  width: 8rem;
+	  height: 3rem;
+
+
+	  }
+      .separator{
+	  border-top: 1px solid #D8D8D8;
+	  margin-top: 0.8rem;
+	  margin-bottom: 0.8rem;
+	  margin-left: -1rem;
+	  width: 100%;
+	  }
+      .ss-form-container, .ss-resp-card {
+		background-color:white;
+      }
+      
+      .ss-footer, .ss-response-footer {
+        background-color: #2c3e50;
+		height:80px;
+		margin-top: 10px;
+      }
+      
+      .ss-grid-row-odd {
+        background-color: rgb(242,242,242);
+      }
+      
+      .ss-form-title[dir="rtl"] {
+        text-align: center;
+		
+      }
+      
+      .ss-form-desc {
+        text-align: center;
+      }
+      
+      .ss-form-desc[dir="rtl"] {
+        text-align: center;
+      }
+      
+      .ss-header-image-container {
+        height: auto;
+        text-align: center;
+      }
+      
+      .ss-header-image-image {
+        background-image: url('');
+      }
+      
+      .ss-header-image-sizer {
+        padding-top: 2%;
+		background-color:#E0B2ED;
+		height: 30px;
+      }
+      
+      .ss-item {
+        font-size: 1.250rem;
+      }
+      
+      .ss-choices {
+        font-size: 1.00rem;
+		margin-top:5px;
+      }
+      .ss-choice-item{
+	  display: inline;
+	  padding-right: 5px;
+	  }
+	  
+      .ss-record-username-message {
+        font-family: "Roboto";
+        color: rgb(15,132,136);
+        font-weight: 400;
+        font-size: 1.080rem;
+        font-style: normal;
+      }
+	  
+      .ss-q-short{
+		width: 90%;
+		height: 25px;
+		border-radius: 0.3rem;
+        padding-left: 0.2rem;
+	  }
+	  
+	  .ss-q-long{
+	  width: 90%;
+	  border-radius: 0.3rem;
+      padding-left: 0.2rem;
+	  }
+	  
+	  .ss-q-date{
+	  border-style: groove;
+      border-radius: 0.3rem;
+	  }
+	  
+      select{
+      height: 25px;
+      font-size: 1.2rem;
+      }
+	  
+      .ss-form-title {
+		text-align: center;
+        font-family: "Kalam";
+        color: #454345;
+        font-weight: 400;
+        font-size: 2.460rem;
+        font-style: normal;
+		margin-bottom: 10px;
+      }
+	  
+	  .ss-form-question.errorbox-good{
+	    display:inline-block;
+		vertical-align: bottom;
+		width: 20%;
+		background-color:white;
+		position: relative;
+		margin: 3px;
+		border-radius: 5px;
+	  }
+	  
+      .ss-confirmation {
+        font-family: "Kalam";
+        color: rgb(0,137,82);
+        font-weight: 400;
+        font-size: 2.460rem; 
+        font-style: normal;
+      }
+      
+      .ss-page-title, .ss-section-title {
+        font-family: "Kalam";
+        color: rgb(58,147,100);
+        font-weight: 400;
+        font-size: 1.845rem;
+        font-style: normal;
+      }
+      
+      .ss-form-desc, .ss-page-description, .ss-section-description {
+        font-family: "Roboto";
+        color: rgb(115,169,172);
+        font-weight: 400;
+        font-size: 1.080rem;
+        font-style: normal;
+      }
+      
+      .ss-resp-content {
+        font-family: "Roboto";
+        color: rgb(15,132,136);
+        font-weight: 400;
+        font-size: 1.080rem;
+        font-style: normal;
+      }
+      
+		.ss-q-title {
+		  font-family: "Roboto";
+		  color: rgb(45,137,225);
+		  font-weight: 500;
+		  font-size: 1.500rem;
+		  font-style: normal;
+		}      
+      .ss-embeddable-object-container .ss-q-title {
+        font-family: "Kalam";
+        color: rgb(58,147,100);
+        font-weight: 700;
+        font-size: 1.845rem;
+        font-style: normal;
+      }
+      
+      .ss-q-help, .ss-q-time-hint {
+        font-family: "Roboto";
+        color: rgb(115,169,172);
+        font-weight: 400;
+        font-size: 1.000rem;
+        font-style: normal;
+      }
+      
+      .ss-choice-label, .video-secondary-text, .ss-gridrow-leftlabel, .ss-gridnumber, .ss-scalenumber, .ss-leftlabel, .ss-rightlabel {
+        font-family: "Roboto";
+        color: rgb(90,90,90);
+        font-weight: 400;
+        font-size: 1.20rem;
+        font-style: normal;
+      }
+      
+      .error-message, .required-message, .ss-required-asterisk {
+        font-family: "Roboto";
+        color: rgb(196,59,29);
+        font-weight: 400;
+        font-size: 0.9rem;
+        font-style: normal;
+      }
+      
+      .ss-send-email-receipt {
+        font-family: "Kalam";
+        color: rgb(0,137,82);
+        font-weight: 400;
+        font-size: 1.080rem;
+        font-style: normal;
+      }
+      
+      .ss-password-warning {
+        font-family: "Arial";
+        color: rgb(15,132,136);
+        font-weight: 400;
+        font-size: 1.000rem;
+        font-style: italic;
+      }
+      
+      .disclaimer {
+        font-family: "Arial";
+        color: rgb(15,132,136);
+        font-weight: 400;
+        font-size: 0.850rem;
+        font-style: normal;
+      }
+      
+      .ss-footer-content {
+        font-family: "Roboto";
+		color: white;
+        font-weight: 400;
+        font-size: 1.00rem;
+        font-style: normal;
+		text-align: center;
+      }
+      
+      .progress-label {
+        font-family: "Roboto";
+        color: rgb(115,169,172);
+        font-weight: 400;
+        font-size: 1.000rem;
+        font-style: normal;
+      }
+      
+      a:link {
+        color: rgb(0,0,238);
+      }
+      
+      a:visited {
+        color: rgb(85,26,139);
+      }
+      
+      a:active {
+        color: rgb(252,0,0);
+      }
+      
+      input[type='text'], input:not([type]), textarea {
+        font-size: 1.080rem;
+      }
+      
+      .error, .required, .errorbox-bad {
+        border-color: rgb(196,59,29);
+      }
+      
+      .jfk-progressBar-nonBlocking .progress-bar-thumb {
+        background-color: rgb(115,169,172);
+      }
+      
+	  .glyphicon-info-sign{
+	  color: #088A85;
+	  }
+

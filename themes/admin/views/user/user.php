@@ -33,7 +33,7 @@ $from = ! empty($from) ? $from : '';
 	<!-- Lastname -->
 	<dl class="small">
 		<dt>
-			<label for="lastname<?php echo $user['id_user'] ?>"><?php echo lang('ionize_label_lastname'); ?></label>
+			<label for="lastname<?php echo $user['id_user'] ?>"><?php echo lang('ionize_label_staffid'); ?></label>
 		</dt>
 		<dd>
 			<input id="lastname<?php echo $user['id_user'] ?>" name="lastname" class="inputtext" type="text" value="<?php echo $user['lastname'] ?>" />
