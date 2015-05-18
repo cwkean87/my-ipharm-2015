@@ -25,7 +25,7 @@ $config['sitemaps_search_engines'] = array (
 |--------------------------------------------------------------------------
 |
 */
-$config['sitemaps_gzip'] = true;
+$config['sitemaps_gzip'] = false;
 $config['sitemaps_gzip_path'] = '{file_name}.gz';
 
 /*
@@ -35,7 +35,7 @@ $config['sitemaps_gzip_path'] = '{file_name}.gz';
 |--------------------------------------------------------------------------
 |
 */
-$config['sitemaps_auto_create'] = true;
+$config['sitemaps_auto_create'] = false;
 
 
 /*

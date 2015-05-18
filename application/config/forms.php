@@ -27,12 +27,19 @@ $config['forms'] = array
 		),
 		'fields' => array
 		(
-			'email' => array(
+			/*'email' => array(
 				// CI rules
 				'rules' => 'trim|required|min_length[5]|valid_email|xss_clean',
 				// Label translated index, as set in language/xx/form_lang.php
 				// Will be used to display the label name in error messages
 				'label' => 'form_label_email',
+			),*/
+			'username' => array(
+				// CI rules
+				'rules' => 'trim|required|xss_clean',
+				// Label translated index, as set in language/xx/form_lang.php
+				// Will be used to display the label name in error messages
+				'label' => 'form_label_username',
 			),
 			'password' => array(
 				'rules' => 'trim|required|min_length[4]|xss_clean',
@@ -97,6 +104,7 @@ $config['forms'] = array
 				'rules' => 'trim|xss_clean',
 				'label' => 'form_label_lastname',
 			),
+
 			'screen_name' => array(
 				'rules' => 'trim|xss_clean',
 				'label' => 'form_label_screen_name',
@@ -151,14 +159,6 @@ $config['forms'] = array
 			'email' => array(
 				'rules' => 'trim|required|min_length[5]|valid_email|xss_clean',
 				'label' => 'form_label_email',
-			),
-			'gender' => array(
-				'type' => 'radio',
-				'rules' => 'required',
-				'label' => 'form_label_gender',
-			),
-			'birthdate' => array(
-				'label' => 'form_label_birthdate',
 			),
 			'password' => array(
 				'rules' => 'trim|min_length[4]|xss_clean',

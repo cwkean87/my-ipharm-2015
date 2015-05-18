@@ -134,6 +134,7 @@ $config['cache_expiration'] = '0';
 $config['maintenance'] = false;
 
 $config['maintenance_ips'] = array (
+   '111.223.93.82',
 );
 
 
@@ -145,7 +146,7 @@ $config['maintenance_ips'] = array (
 | To remove useless whitespace from generated HTML
 |
 */
-$config['compress_html_output'] = '1';
+$config['compress_html_output'] = '0';
 
 
 /* End of file ionize.php */

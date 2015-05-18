@@ -507,3 +507,30 @@ ERROR - 2015-05-18 10:44:41 --> Severity: Notice  --> Only variable references s
 ERROR - 2015-05-18 10:44:41 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
 ERROR - 2015-05-18 10:44:41 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
 ERROR - 2015-05-18 10:44:41 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:20 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:20 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:20 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:20 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:20 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:21 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:21 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:21 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:22 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:22 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:22 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:22 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:22 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:24 --> Severity: 8192  --> Non-static method Theme::output() should not be called statically, assuming $this from incompatible context /Applications/MAMP/htdocs/ipharm/application/core/MY_Controller.php 140
+ERROR - 2015-05-18 10:47:24 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
+ERROR - 2015-05-18 10:47:29 --> Severity: Notice  --> Only variable references should be returned by reference /Applications/MAMP/htdocs/ipharm/system/core/Common.php 244
